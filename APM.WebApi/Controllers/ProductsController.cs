@@ -5,9 +5,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace APM.WebApi.Controllers
 {
+    [EnableCorsAttribute("http://localhost:16903", "*", "*")] //url when site is started 
     public class ProductsController : ApiController
     {
         // GET: api/Products
