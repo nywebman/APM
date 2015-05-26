@@ -15,7 +15,7 @@ namespace APM.WebApi.Controllers
     {
         // GET: api/Products
         [EnableQuery()]
-        public IQueryable Get()
+        public IQueryable<Product> Get()
         {
             var productRepository = new ProductRepository();
             return productRepository.Retrieve().AsQueryable();
