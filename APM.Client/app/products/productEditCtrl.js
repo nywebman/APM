@@ -38,8 +38,11 @@
                     },
                     function (response) {
                         vm.message = response.statusText + "\r\n";
-                        if (response.data.exceptionMessage)
-                            vm.message += response.data.exceptionMessage;
+                        if (response.data.modelSate) {
+                            for (var key in response.data.modelSate) {
+                                vm.message += response.data.modelSate[key] + "\r\n";
+                            }
+                        }
                     });
             }
             else {
@@ -50,8 +53,11 @@
                     },
                     function (response) {
                         vm.message = response.statusText + "\r\n";
-                        if (response.data.exceptionMessage)
-                            vm.message += response.data.exceptionMessage;
+                        if (response.data.modelSate) {
+                            for (var key in response.data.modelSate) {
+                                vm.message += response.data.modelSate[key] + "\r\n";
+                            }
+                        }
                     });
             }
         };
