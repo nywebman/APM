@@ -28,13 +28,13 @@ namespace APM.WebApi.Providers
         }
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
-        {
+        {           
             var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
 
             ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password);
 
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin",
-                new[] { "http://localhost:16903/" });
+                new[] { "http://localhost:16903" });
 
             if (user == null)
             {
